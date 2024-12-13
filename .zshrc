@@ -205,9 +205,6 @@ export AWS_VAULT_KEYCHAIN_NAME=login
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-# Rancher
-export PATH="$HOME/.rd/bin:$PATH"
-
 # buildkit
 export DOCKER_BUILDKIT=1
 
