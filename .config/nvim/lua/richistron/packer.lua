@@ -9,8 +9,9 @@ return require('packer').startup(function(use)
   use({ 'rose-pine/neovim', as = 'rose-pine' })
 
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5',
-    -- or                            , branch = '0.1.x',
+    'nvim-telescope/telescope.nvim',
+--     tag = '0.1.5',
+    branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
@@ -43,7 +44,7 @@ return require('packer').startup(function(use)
     }
   }
   use('preservim/nerdcommenter')
-  use('vim-airline/vim-airline') 
-  use('vim-airline/vim-airline-themes') 
+  use('vim-airline/vim-airline')
+  use('vim-airline/vim-airline-themes')
 end)
 
