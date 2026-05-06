@@ -105,60 +105,12 @@ alias cd..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
-alias slt='open -a "Sublime Text 2"'
 alias please=sudo
 alias fucking=sudo
-alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
-alias lsd='ls -l | grep "^d"'
-alias undopush="git push -f origin HEAD^:master"
-alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
-alias flush="dscacheutil -flushcache"
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-alias trimcopy="tr -d '\n' | pbcopy"
-alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias g="git"
 alias v="nvim"
-alias fs="stat -f \"%z bytes\""
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias plistbuddy="/usr/libexec/PlistBuddy"
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 10'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 alias decolorize='sed -r "s/\\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"'
-alias docker_container="docker ps -a"
-alias r_reset="rails db:drop; rails db:create; rails db:migrate; rails db:seed;"
-alias r="rails"
-alias rs="rspec"
-alias mysql_start="brew services start mysql@5.7"
-alias mysql_stop="brew services stop mysql@5.7"
-alias nginx_start="brew services start nginx-full"
-alias nginx_stop="brew services stop nginx-full"
-alias nginx_restart="brew services restart nginx-full"
-alias nginx_reload="brew services reload nginx-full"
-# rubocop
-alias police="git status -s | awk '{print \$2}' | grep '\.rb$' | xargs rubocop"
-# spork
-alias spork_up="RAILS_ENV=test bundle exec spork"
-alias spork_test="bundle exec rspec --drb"
-# bundler
-alias be="bundle exec"
-alias bs="bundle show"
-alias b="bundle"
-alias fix_postgres="rm -f /usr/local/var/postgres/postmaster.pid"
-alias nocolors='sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2};?)?)?[mGK]//g"'
-alias slackmojify="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbose"
-export BUNDLER_EDITOR=nvim
-
-# python
 alias py=". venv/bin/activate"
-
-# AWS
 alias iam="aws sts get-caller-identity"
 
 ### FUNCTIONS
@@ -195,27 +147,5 @@ bash_colors() {
 
 ### FUNCTIONS
 
-# brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# aws
-export AWS_VAULT_PROMPT=osascript
-export AWS_VAULT_KEYCHAIN_NAME=login
-
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# Rancher
-export PATH="$HOME/.rd/bin:$PATH"
-
-# buildkit
-export DOCKER_BUILDKIT=1
-
-# https://github.com/rupa/z
-. $HOME/z/z.sh
-
 ## END
-
-unset GEM_HOME
-export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
 
